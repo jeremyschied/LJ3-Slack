@@ -3,7 +3,7 @@ const app = express();
 
 app.use(express.json());
 
-const TWIN_WEBHOOK = 'https://build.twin.so/triggers/a7558d78-64df-41df-8538-86012d24ac56/webhook';
+const TWIN_WEBHOOK = 'https://build.twin.so/triggers/746aa7d4-0fe9-46bf-83b0-5a78527b11e3/webhook';
 
 app.post('/slack/events', async (req, res) => {
   const body = req.body;
