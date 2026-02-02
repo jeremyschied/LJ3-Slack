@@ -16,3 +16,5 @@ if (body.event && (body.event.bot_id || body.event.subtype === 'bot_message')) {
 try { await fetch(TWIN_WEBHOOK, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) }); console.log('Forwarded to Twin'); } catch (err) { console.error('Failed to forward:', err.message); } });
 
 app.get('/health', (req, res) => res.send('ok'));
+
+const PORT = process.env.PORT || 3000; app.listen(PORT, '0.0.0.0', () => { console.log('Slack proxy running on port ' + PORT); });
