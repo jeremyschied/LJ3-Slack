@@ -3,7 +3,7 @@ const app = express();
 
 app.use(express.json());
 
-const BIG_BRAIN_WEBHOOK = 'https://build.twin.so/triggers/7421b7e8-38a9-40b0-8b46-466780a8b8d1/webhook'; const BIG_BRAIN_IN_CHANNEL = 'C0ACXEDBURJ';
+const BIG_BRAIN_WEBHOOK = 'https://build.twin.so/triggers/ee1d2a2d-6652-4a84-a490-b2d9773e33fb/webhook';
 
 app.post('/slack/events', async function(req, res) { const body = req.body; console.log('Payload:', JSON.stringify(body));
 
