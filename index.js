@@ -9,17 +9,6 @@ app.post('/slack/events', async (req, res) => { const body = req.body; console.l
 
 // Handle Slack URL verification challenge if (body.type === 'url_verification') { console.log('URL verification challenge received'); return res.json({ challenge: body.challenge }); }
 
-const express = require('express');
-const app = express();
-
-app.use(express.json());
-
-const BIG_BRAIN_WEBHOOK = 'https://build.twin.so/triggers/7421b7e8-38a9-40b0-8b46-466780a8b8d1/webhook'; const BIG_BRAIN_IN_CHANNEL = 'C0ACXEDBURJ';
-
-app.post('/slack/events', async (req, res) => { const body = req.body; console.log('Payload:', JSON.stringify(body));
-
-// Handle Slack URL verification challenge if (body.type === 'url_verification') { console.log('URL verification challenge received'); return res.json({ challenge: body.challenge }); }
-
 // Acknowledge receipt immediately res.status(200).send('ok');
 
 const event = body.event;
@@ -50,3 +39,5 @@ try {
 app.get('/health', (req, res) => res.send('ok'));
 
 const PORT = process.env.PORT || 3000; app.listen(PORT, '0.0.0.0', () => { console.log('Slack proxy running on port ' + PORT); });
+
+
